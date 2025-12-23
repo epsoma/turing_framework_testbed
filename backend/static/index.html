@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>TURING Framework CUI</title>
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+
+<body>
+<header>
+  <div class="wrap">
+    <div class="topbar">
+      <div class="brand">
+        <div class="logo">
+          <img src="/static/logo.png" alt="TURING logo"
+               onerror="this.remove(); const p=document.createElement('div'); p.className='placeholder'; p.textContent='LOGO'; this.parentNode.appendChild(p);" />
+        </div>
+        <div class="titleblock">
+          <h1>TURING Framework CUI</h1>
+          <div class="sub">Conversational Interface · Foundation Models</div>
+        </div>
+      </div>
+
+      <div class="status-pill">
+        <span class="dot"></span>
+        <span id="topStatus">Starting…</span>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="wrap">
+  <div class="card">
+    <div id="chat" class="chat"></div>
+
+    <div class="controls">
+      <div>
+        <textarea id="message" placeholder="Type a message… (Ctrl/Cmd + Enter)"></textarea>
+        <div class="hint">
+        </div>
+      </div>
+
+      <div class="right">
+        <input id="file" type="file" />
+        <button id="send">Send</button>
+        <button id="newchat" class="btn-secondary">New chat</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="status" class="status"></div>
+</div>
+<script src="/static/scripts.js"></script>
+</body>
+</html>

@@ -1,0 +1,247 @@
+:root{
+/* TURING orange palette (from site image) */
+--brand-main: #f28c1b;
+--brand-dark: #e07010;
+--brand-light: #ffb04a;
+
+--bg: #fff7ef;
+--panel: #ffffff;
+--text: #1f1f1f;
+--muted: #6b625a;
+
+--border: #e9dfd4;
+--shadow: 0 18px 50px rgba(0,0,0,0.12);
+
+--user-bg: rgba(242,140,27,0.12);
+--bot-bg: #f9f5f0;
+
+--btn-bg: var(--brand-main);
+--btn-bg-hover: var(--brand-dark);
+--btn-text: #ffffff;
+
+--focus: rgba(242,140,27,0.35);
+}
+
+* { box-sizing: border-box; }
+
+body {
+font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+margin: 0;
+color: var(--text);
+background:
+radial-gradient(1000px 500px at 10% 0%, rgba(242,140,27,0.18), transparent 55%),
+radial-gradient(900px 450px at 90% 10%, rgba(255,176,74,0.16), transparent 55%),
+var(--bg);
+}
+
+header {
+position: sticky;
+top: 0;
+z-index: 10;
+background: rgba(255,255,255,0.85);
+backdrop-filter: blur(10px);
+border-bottom: 1px solid var(--border);
+}
+
+.wrap { max-width: 980px; margin: 0 auto; padding: 16px; }
+
+.topbar {
+display: flex;
+align-items: center;
+gap: 14px;
+}
+
+.brand {
+display: flex;
+align-items: center;
+gap: 14px;
+}
+
+.logo {
+width: 46px;
+height: 46px;
+border-radius: 10px;
+background:
+linear-gradient(135deg, rgba(242,140,27,0.35), rgba(224,112,16,0.25));
+display: grid;
+place-items: center;
+overflow: hidden;
+flex: 0 0 auto;
+background-image: url(https://turing-project.eu/wp-content/uploads/2025/09/horizontal_light.png);
+background-size: cover;
+background-repeat: no-repeat;
+background-position-x: 2px;
+}
+
+.logo img {
+width: 100%;
+height: 100%;
+object-fit: contain;
+display: block;
+}
+
+.logo .placeholder {
+font-size: 11px;
+font-weight: 800;
+letter-spacing: 0.08em;
+color: #ffffff;
+}
+
+.titleblock h1 {
+margin: 0;
+font-size: 15px;
+font-weight: 800;
+letter-spacing: 0.03em;
+}
+
+.titleblock .sub {
+margin-top: 2px;
+font-size: 12px;
+color: var(--muted);
+}
+
+.status-pill {
+margin-left: auto;
+display: inline-flex;
+align-items: center;
+gap: 8px;
+padding: 8px 12px;
+border-radius: 999px;
+border: 1px solid var(--border);
+background: #fff;
+font-size: 12px;
+color: var(--muted);
+}
+
+.dot {
+width: 10px;
+height: 10px;
+border-radius: 50%;
+background: var(--brand-main);
+box-shadow: 0 0 0 4px rgba(242,140,27,0.25);
+}
+
+.card {
+background: var(--panel);
+border: 1px solid var(--border);
+border-radius: 16px;
+box-shadow: var(--shadow);
+overflow: hidden;
+}
+
+.chat {
+padding: 16px;
+height: 60vh;
+overflow: auto;
+background:
+linear-gradient(to bottom, rgba(242,140,27,0.08), transparent 30%),
+#ffffff;
+}
+
+.msg { margin: 12px 0; display: flex; }
+
+.bubble {
+padding: 12px 14px;
+border-radius: 14px;
+max-width: 78%;
+white-space: pre-wrap;
+line-height: 1.4;
+border: 1px solid var(--border);
+}
+
+.user .bubble {
+margin-left: auto;
+background: var(--user-bg);
+border-color: rgba(242,140,27,0.35);
+}
+
+.bot .bubble {
+margin-right: auto;
+background: var(--bot-bg);
+}
+
+.meta {
+font-size: 12px;
+color: var(--muted);
+margin-top: 6px;
+}
+
+.controls {
+padding: 16px;
+border-top: 1px solid var(--border);
+display: grid;
+grid-template-columns: 1fr auto;
+gap: 14px;
+align-items: end;
+}
+
+textarea {
+width: 100%;
+min-height: 80px;
+resize: vertical;
+padding: 12px;
+border-radius: 12px;
+border: 1px solid var(--border);
+background: #ffffff;
+color: var(--text);
+outline: none;
+transition: box-shadow .15s ease, border-color .15s ease;
+}
+
+textarea:focus {
+border-color: var(--brand-main);
+box-shadow: 0 0 0 6px var(--focus);
+}
+
+.right {
+display: flex;
+flex-direction: column;
+gap: 8px;
+min-width: 190px;
+}
+
+input[type="file"]{
+padding: 9px 10px;
+border-radius: 12px;
+border: 1px solid var(--border);
+background: #ffffff;
+color: var(--muted);
+}
+
+button {
+padding: 11px 14px;
+border-radius: 12px;
+border: none;
+background: var(--btn-bg);
+color: var(--btn-text);
+cursor: pointer;
+font-weight: 800;
+letter-spacing: 0.02em;
+transition: background .15s ease, transform .05s ease, opacity .15s ease;
+}
+
+button:hover { background: var(--btn-bg-hover); }
+button:active { transform: translateY(1px); }
+button:disabled { opacity: 0.55; cursor: not-allowed; }
+
+.btn-secondary{
+background: #ffffff;
+color: var(--brand-dark);
+border: 1px solid rgba(224,112,16,0.35);
+}
+
+.btn-secondary:hover{
+background: rgba(242,140,27,0.10);
+}
+
+.hint {
+margin-top: 10px;
+font-size: 12px;
+color: var(--muted);
+}
+
+.status {
+margin-top: 10px;
+font-size: 12px;
+color: var(--muted);
+}
